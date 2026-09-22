@@ -1,0 +1,81 @@
+# Sample requirements for a fictional "Personal Loan Application" workflow.
+#
+# This is entirely synthetic/fictional sample data created for demonstration
+# purposes only. It is not derived from, and does not reference, any real
+# company, product, or proprietary system.
+
+requirements:
+  - requirement_id: REQ-001
+    title: Applicant email address capture
+    description: >
+      As a prospective applicant, I want to provide my email address when
+      starting a personal loan application, so that the lender can send me
+      status updates about my application.
+    acceptance_criteria:
+      - >
+        Given a new applicant on the "Start Application" page, when they
+        enter a valid email address and submit, then the application record
+        is created with that email address stored.
+      - >
+        Given a new applicant on the "Start Application" page, an email
+        address is a required field, so when they submit without entering
+        an email address, then the system displays a validation error and
+        does not create the application record.
+      - >
+        Given an existing applicant record, when a new application is
+        submitted, the email address must be unique per applicant, so when
+        the same email address is submitted twice, then the second
+        submission is rejected as a duplicate.
+
+  - requirement_id: REQ-002
+    title: Requested loan amount validation
+    description: >
+      As an applicant, I want to specify the loan amount I am requesting,
+      so that the lender can evaluate my application against product limits.
+    acceptance_criteria:
+      - >
+        Given an applicant has started a loan application, when they enter
+        a requested amount that is at least the minimum of 1,000 and at
+        most the maximum of 50,000, then the amount is accepted and saved
+        to the application.
+      - >
+        Given an applicant has started a loan application, the requested
+        amount must be a valid positive number, so when they enter a
+        non-numeric or negative value, then the system displays a
+        validation error and does not save the amount.
+
+  - requirement_id: REQ-003
+    title: Annual income disclosure
+    description: >
+      As an applicant, I want to disclose my annual income, so that the
+      lender can assess my ability to repay the requested loan amount.
+    acceptance_criteria:
+      - >
+        Given an applicant is completing the income section, annual income
+        is a required field, so when they enter a valid annual income
+        amount and continue, then the value is saved and the applicant
+        proceeds to the next step.
+
+  - requirement_id: REQ-004
+    title: Applicant identity document upload
+    description: >
+      As an applicant, I want to upload an identity document, so that the
+      lender can verify my identity before approving the loan.
+    acceptance_criteria:
+      - >
+        Given an applicant is on the identity verification step, when they
+        upload a supported document type (PDF, JPG, or PNG) under the
+        maximum size of 10 megabytes, then the document is accepted and
+        linked to the application.
+
+  - requirement_id: REQ-005
+    title: Application submission confirmation
+    description: >
+      As an applicant, I want to receive confirmation after submitting my
+      completed application, so that I know it was received successfully.
+    acceptance_criteria:
+      - >
+        Given an applicant has completed all required application steps,
+        when they submit the final application, then the system displays a
+        confirmation screen containing a unique application reference
+        number.

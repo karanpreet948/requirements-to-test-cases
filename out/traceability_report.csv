@@ -1,0 +1,6 @@
+requirement_id,title,acceptance_criteria_count,test_case_count,positive_count,negative_count,edge_count,status
+REQ-001,Applicant email address capture,3,6,3,3,0,OK
+REQ-002,Requested loan amount validation,2,5,2,1,2,OK
+REQ-003,Annual income disclosure,1,3,1,2,0,OK
+REQ-004,Applicant identity document upload,1,2,1,0,1,OK
+REQ-005,Application submission confirmation,1,3,1,2,0,OK

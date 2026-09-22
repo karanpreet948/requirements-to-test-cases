@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "requirements-to-test-cases"
+version = "1.0.0"
+description = "Generate draft QA test case scaffolding from structured requirements, with traceability."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Karanpreet Kaur" }]
+dependencies = [
+    "PyYAML>=6.0,<7.0",
+    "openpyxl>=3.1,<4.0",
+]
+
+[project.scripts]
+rtc = "rtc.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
